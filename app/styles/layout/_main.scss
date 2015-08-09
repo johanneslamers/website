@@ -1,0 +1,11 @@
+
+
+.wrap {
+  //margin: rem(40);
+  background-color: $base-background-color;
+}
+
+.container {
+  @include outer-container();
+}
+

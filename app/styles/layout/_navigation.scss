@@ -1,0 +1,41 @@
+header.navigation {
+  @include position(fixed, 0 null null 0);
+  min-height: $navigation-height;
+  width: 100%;
+  z-index: 999;
+  .navigation-wrapper {
+    height: $navigation-height;
+    position: relative;
+  }
+  .logo {
+    @include position(absolute, 50% null null 50%);
+    @include transform(translate(-50%, -50%));
+    width: rem(100px);
+    height: rem(100px);
+    font-size: 5rem;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    color: $dark-gray;
+  }
+  .navigation-menu-button {
+    color: $navigation-color;
+    display: block;
+    float: left;
+    font-size: 3rem;
+    line-height: $navigation-height;
+    margin: 0;
+    padding: 0 $small-spacing;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @include media($horizontal-bar-mode) {
+      display: none;
+    }
+
+    &:focus,
+    &:hover {
+      color: $navigation-color-hover;
+    }
+  }
+}

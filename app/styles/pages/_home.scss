@@ -1,0 +1,15 @@
+.about {
+  @include align-items(center);
+  @include display(flex);
+  @include justify-content(center);
+  @include padding($base-spacing);
+  height: 100vh;
+  h2, p {
+    max-width: rem(500px);
+    margin: 0 auto;
+    text-align: center;
+  }
+  p {
+    text-transform: uppercase;
+  }
+}
