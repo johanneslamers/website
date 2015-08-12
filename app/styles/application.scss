@@ -2,7 +2,9 @@
 @import "neat-helpers";
 @import 'neat';
 
-@import "base/variables";
+@import "utils/functions";
+@import "utils/mixins";
+@import "utils/variables";
 
 @import "base/fonts";
 @import "base/icons";

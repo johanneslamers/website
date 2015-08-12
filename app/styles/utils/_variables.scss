@@ -11,9 +11,15 @@ $large-screen: em(860);
 $medium-screen-up: new-breakpoint(min-width $medium-screen 4);
 $large-screen-up: new-breakpoint(min-width $large-screen 8);
 
+/// Device breakpoints map
+$breakpoints: (
+  'medium': (min-width: rem(640)),
+  'large': (min-width: rem(1000)),
+  'huge': (min-width: rem(1200)),
+);
 
 // Typography
-$base-font-family: 'Brandon Grotesque', $helvetica;
+$base-font-family: 'Brandon Grotesque', 'Helvetica Neue', 'Helvetica', 'Roboto', 'Arial', sans-serif;
 $heading-font-family: $base-font-family;
 
 // Font Sizes
@@ -56,3 +62,13 @@ $navigation-color: $dark-gray;
 $navigation-color-hover: $medium-gray;
 $navigation-height: 100px;
 $horizontal-bar-mode: $large-screen;
+
+/// Z-indexes map, gathering all Z layers of the application
+$z-indexes: (
+  'modal': 5000,
+  'dropdown': 4000,
+  'header': 2000,
+  'menu': 1000,
+  'default': 1,
+  'below': -1,
+);

@@ -4,12 +4,21 @@
   @include justify-content(center);
   @include padding($base-spacing);
   height: 100vh;
-  h2, p {
-    max-width: rem(500px);
-    margin: 0 auto;
+  h6, p {
+    font-family: $base-font-family;
+    max-width: rem(620px);
+    margin: 0 auto 2rem;
     text-align: center;
   }
+  h6 {
+    font-size: 1.2rem;
+
+    @include media($medium-screen-up){
+      font-size: 1.5rem;
+    }
+  }
   p {
-    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: bold;
   }
 }

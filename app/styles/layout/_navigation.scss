@@ -2,7 +2,7 @@ header.navigation {
   @include position(fixed, 0 null null 0);
   min-height: $navigation-height;
   width: 100%;
-  z-index: 999;
+  z-index: z('header');
   .navigation-wrapper {
     height: $navigation-height;
     position: relative;
@@ -10,15 +10,18 @@ header.navigation {
   .logo {
     @include position(absolute, 50% null null 50%);
     @include transform(translate(-50%, -50%));
+    @include user-select(none);
     width: rem(100px);
     height: rem(100px);
+    font-family: $heading-font-family;
     font-size: 5rem;
     line-height: 1;
     text-align: center;
     text-decoration: none;
     color: $dark-gray;
   }
-  .navigation-menu-button {
+  .menu-button {
+    @include user-select(none);
     color: $navigation-color;
     display: block;
     float: left;
@@ -29,13 +32,60 @@ header.navigation {
     text-decoration: none;
     text-transform: uppercase;
 
-    @include media($horizontal-bar-mode) {
-      display: none;
-    }
+    // @include media($horizontal-bar-mode) {
+    //   display: none;
+    // }
 
     &:focus,
     &:hover {
       color: $navigation-color-hover;
+    }
+  }
+
+  .site-nav {
+    display: none;
+
+    .menu-open & {
+      display: block;
+    }
+
+    .inner {
+      @include align-items(center);
+      @include display(flex);
+      @include justify-content(center);
+      z-index: z('menu');
+      width: 100vw;
+      height: 100vh;
+    }
+
+    ul {
+      margin: -($navigation-height * 2) 0 0; // offset fixed header
+    }
+
+    li {
+      width: 100%;
+      padding: 0 1.5rem;
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      text-align: center;
+      opacity: 0;
+
+      .menu-open & {
+        @for $i from 1 through 6 {
+          // Apply animation using :nth-child pseudoclass
+          &:nth-child(#{$i}) {
+            // Include the animation mixin, together with
+            // a delay parameter.
+            @include animation--fadedown($i/20);
+          }
+        }
+      }
+
+      a {
+        text-decoration: none;
+      }
     }
   }
 }
