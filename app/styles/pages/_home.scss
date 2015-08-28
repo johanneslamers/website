@@ -1,3 +1,11 @@
+.full-screen {
+  @include align-items(center);
+  @include display(flex);
+  @include justify-content(center);
+  @include padding($base-spacing);
+  height: 100vh;
+}
+
 .intro {
   h1, p {
     font-family: $base-font-family;
@@ -12,49 +20,16 @@
       font-size: 4rem;
     }
   }
-}
-
-.full-screen {
-  @include align-items(center);
-  @include display(flex);
-  @include justify-content(center);
-  @include padding($base-spacing);
-  height: 100vh;
-}
-
-.about {
-  .info {
-    margin-bottom: 2rem;
-
-    @include media($medium-screen-up){
-      @include span-columns(8 of 12);
-      padding-right: 5rem;
-      margin-bottom: 0;
-    }
-  }
-
-  .contact {
-    @include media($medium-screen-up){
-      @include span-columns(4 of 12);
-    }
-
-    li {
-      font-weight: bold;
-    }
+  p {
+    font-size: 0.85rem;
   }
 }
 
 .work {
-  padding: 2rem 0;
-
-  h2 {
-    text-align: center;
-    font-size: 0.85rem;
-    margin-bottom: 4rem;
-  }
-
   .container {
-    max-width: 40rem;
+    @include media($medium-screen-up){
+      width: 40rem;
+    }
   }
 
   .project {
@@ -101,7 +76,37 @@
   }
 }
 
-p {
-  font-size: 0.85rem;
-  font-weight: bold;
+.about {
+  .container {
+    @include media($medium-screen-up){
+      width: rem(720px);
+    }
+  }
+
+  .info {
+    margin-bottom: 2rem;
+
+    @include media($medium-screen-up){
+      @include span-columns(9 of 12);
+      margin-bottom: 0;
+    }
+  }
+
+  .contact {
+    @include media($medium-screen-up){
+      @include span-columns(2 of 12);
+      @include shift(1);
+    }
+
+    li {
+      font-weight: bold;
+    }
+  }
+}
+
+
+h4 {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  letter-spacing: 0;
 }
