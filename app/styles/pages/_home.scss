@@ -1,17 +1,26 @@
 .full-screen {
-  @include align-items(center);
-  @include display(flex);
-  @include justify-content(center);
-  @include padding($base-spacing);
-  height: 100vh;
+  @include padding($navigation-height $base-spacing);
+
+  @include media($medium-screen-up){
+    @include align-items(center);
+    @include display(flex);
+    @include justify-content(center);
+    @include padding($base-spacing);
+    height: 100vh;
+  }
 }
 
 .intro {
+  @include media($medium-screen-up){
+    margin-top: -($navigation-height);
+  }
+
   h1, p {
     font-family: $base-font-family;
     max-width: rem(720px);
     margin: 0 auto 2rem;
   }
+
   h1 {
     font-size: 2rem;
     text-transform: uppercase;
@@ -20,6 +29,7 @@
       font-size: 4rem;
     }
   }
+
   p {
     font-size: 0.85rem;
   }
@@ -66,7 +76,6 @@
       @include transform(translateY(-100%));
       font-size: 0.85rem;
       font-weight: bold;
-      //color: lighten($dark-gray, 15%);
       color: $action-color;
       position: relative;
       display: inline-block;
@@ -102,11 +111,10 @@
       font-weight: bold;
     }
   }
-}
 
-
-h4 {
-  font-size: 1rem;
-  margin-bottom: 2rem;
-  letter-spacing: 0;
+  h4 {
+    font-size: 1rem;
+    letter-spacing: 0;
+    margin-bottom: 2rem;
+  }
 }

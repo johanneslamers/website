@@ -3,10 +3,12 @@ header.navigation {
   min-height: $navigation-height;
   width: 100%;
   z-index: z('header');
+
   .navigation-wrapper {
     height: $navigation-height;
     position: relative;
   }
+
   .logo {
     @include position(absolute, 50% null null 50%);
     @include transform(translate(-50%, -50%));
@@ -36,10 +38,6 @@ header.navigation {
     text-decoration: none;
     text-transform: uppercase;
 
-    // @include media($horizontal-bar-mode) {
-    //   display: none;
-    // }
-
     &:focus,
     &:hover {
       color: $navigation-color-hover;
@@ -58,21 +56,8 @@ header.navigation {
       float: left;
     }
 
-    // .inner {
-    //   // @include align-items(center);
-    //   // @include display(flex);
-    //   // @include justify-content(left);
-    //   // z-index: z('menu');
-    //   // width: 200px;
-    //   // height: 40px;
-    // }
-
-    // ul {
-    //   //margin: -($navigation-height * 2) 0 0; // offset fixed header
-    // }
-
     li {
-      margin-right: 1.5rem;
+      margin: rem(-4px) 1.5rem 0 0;
       font-size: 0.85rem;
       font-weight: bold;
       text-transform: uppercase;

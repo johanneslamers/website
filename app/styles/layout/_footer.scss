@@ -1,5 +1,5 @@
 .site-footer {
+  @include padding($base-spacing);
   background-color: $base-background-color;
   text-align: center;
-  padding: 2rem 0;
 }

@@ -22,8 +22,10 @@ body {
   //   }
   // }
 }
+
 .wrap {
   background-color: $base-background-color;
+  padding-top: $navigation-height;
 }
 
 .container {
