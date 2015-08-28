@@ -37,15 +37,16 @@ $base-z-index: 0;
 
 // Colors
 $blue: #477dca;
-$yellow: #FFC600;
-$dark-gray: #333;
+$yellow: #F5CB5C;
+$dark-gray: #333533;
 $medium-gray: #666;
-$light-gray: #ccc;
+$light-gray: #CFDBD5;
+$lightest-gray: #E8EDDF;
 
 // Font Colors
-$base-background-color: #f4f4f4;
+$base-background-color: #242423;
 $base-font-color: $dark-gray;
-$action-color: black;
+$action-color: $yellow;
 
 // Border
 $base-border-color: $dark-gray;
@@ -59,7 +60,7 @@ $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $l
 $navigation-padding: 1em;
 $navigation-background: $base-background-color;
 $navigation-color: $dark-gray;
-$navigation-color-hover: $medium-gray;
+$navigation-color-hover: $dark-gray;
 $navigation-height: 100px;
 $horizontal-bar-mode: $large-screen;
 

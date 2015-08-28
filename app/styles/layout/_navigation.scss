@@ -19,6 +19,10 @@ header.navigation {
     text-align: center;
     text-decoration: none;
     color: $dark-gray;
+
+    .menu-open & {
+      color: $medium-gray;
+    }
   }
   .menu-button {
     @include user-select(none);
@@ -40,6 +44,10 @@ header.navigation {
     &:hover {
       color: $navigation-color-hover;
     }
+
+    .menu-open & {
+      color: $medium-gray;
+    }
   }
 
   .site-nav {
@@ -47,29 +55,34 @@ header.navigation {
 
     .menu-open & {
       display: block;
-    }
-
-    .inner {
-      @include align-items(center);
-      @include display(flex);
-      @include justify-content(center);
+      position: absolute;
+      left: 200px;
+      top: 10px;
       z-index: z('menu');
-      width: 100vw;
-      height: 100vh;
+      width: 200px;
+      height: 40px;
     }
 
-    ul {
-      margin: -($navigation-height * 2) 0 0; // offset fixed header
-    }
+    // .inner {
+    //   // @include align-items(center);
+    //   // @include display(flex);
+    //   // @include justify-content(left);
+    //   // z-index: z('menu');
+    //   // width: 200px;
+    //   // height: 40px;
+    // }
+
+    // ul {
+    //   //margin: -($navigation-height * 2) 0 0; // offset fixed header
+    // }
 
     li {
       width: 100%;
       padding: 0 1.5rem;
-      font-size: 2.5rem;
+      font-size: 0.85rem;
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 0.1rem;
-      text-align: center;
       opacity: 0;
 
       .menu-open & {
@@ -84,6 +97,7 @@ header.navigation {
       }
 
       a {
+        color: $medium-gray;
         text-decoration: none;
       }
     }

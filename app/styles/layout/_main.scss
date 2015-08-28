@@ -1,45 +1,33 @@
 body {
   position: relative;
 
-  &:after {
-    @include position(fixed, 0 0 0 0);
-    @include transition(opacity 0.25s ease-in-out);
-    @include backface-visibility('hidden');
-    z-index: z('menu');
-    opacity: 0;
-    visibility: hidden;
-    backface-visibility: hidden;
-    width: 100vw;
-    height: 100vh;
-    background-color: white;
-    content: '';
-  }
+  // &:after {
+  //   @include position(fixed, 0 0 0 0);
+  //   @include transition(opacity 0.25s ease-in-out);
+  //   @include backface-visibility('hidden');
+  //   z-index: z('menu');
+  //   opacity: 0;
+  //   visibility: hidden;
+  //   backface-visibility: hidden;
+  //   width: 100vw;
+  //   height: 100vh;
+  //   background-color: $dark-gray;
+  //   content: '';
+  // }
 
-  &.menu-open {
-    &:after {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
+  // &.menu-open {
+  //   &:after {
+  //     opacity: 1;
+  //     visibility: visible;
+  //   }
+  // }
 }
 .wrap {
   background-color: $base-background-color;
 }
+
 .container {
   @include outer-container();
 }
-.maintenance {
-  @include position(fixed, null null 0 0);
-  background: white;
-  width: 100%;
 
-  p {
-    color: $medium-gray;
-    margin: 1rem 0;
-    padding: 1rem;
-    text-align: center;
-    font-size: 0.85rem;
-    font-weight: bold;
-  }
-}
 
